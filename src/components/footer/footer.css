@@ -1,0 +1,10 @@
+footer {
+  font-size: 0.6rem;
+  padding: var(--rtc-padding-xl);
+  display: flex;
+  justify-content: center;
+}
+
+footer h4 {
+  font-weight: 400;
+}

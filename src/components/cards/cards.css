@@ -1,0 +1,151 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 200px;
+  position: relative;
+
+}
+
+.card:hover {
+  transition: transform 0.3s;
+  transform: scale(1.03);
+}
+
+.card:hover .img {
+  filter: brightness(65%); /* només enfosqueix la imatge */
+  transition: filter 0.3s ease;
+}
+
+.imageDiv {
+  width: 200px;
+  height: 300px;
+  position: relative;
+}
+
+.imageDiv .img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.circleButton {
+  background-color: var(--rtc-bgColor);;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+}
+
+.circleButton:hover {
+  border: 1.5px solid var(--rtc-highlightColor);
+  transition: transform 0.2s;
+  transform: scale(1.1);
+}
+
+
+.photosCounterButton  {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.likesCounterButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.likesCounterIcon, .photosCounterIcon {
+  width: 20px;
+}
+
+.likesCounterSpan, .photosCounterSpan {
+  font-size: 10px;
+}
+
+
+.visitLink {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Para hacer que tome como referencia el punto central del elemento y coincida con el centro del contenedor: */
+  transform: translate(-50%, -50%);
+  background-color: var(--rtc-color-3);
+  color: var(--rtc-color-1);
+  padding: var(--rtc-padding-xs) var(--rtc-padding-s);
+  border-radius: var(--rtc-border-radius);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+@keyframes changeButtonBorder {
+  25% {  
+  border: 5px solid rgb(255, 175, 175);}
+
+  100% {
+  border: 2px solid var(--rtc-color-1);
+  }
+}
+
+.visitLink:hover {
+  animation: changeButtonBorder 0.3s;
+  border: 2px solid var(--rtc-color-1);
+}
+
+.infoDiv {
+  display: flex;
+    flex-direction: column;
+  flex: 1;
+  align-items: center;
+  gap: var(--rtc-gap-xs);
+  position: relative;
+  padding-top: var(--rtc-padding-l);
+  padding-bottom: var(--rtc-padding-s);
+  font-size: 0.7rem;
+}
+
+#userAvatarLink {
+  display: flex;
+  justify-content: center;
+}
+
+#userAvatar {
+  width: 60px;
+  position: absolute;
+  top: -25px;
+  background-color: var(--rtc-bgColor);
+  border-radius: 50%;
+  border: 2px solid red;
+}
+
+@keyframes avatarBorderAnimation {
+  30% {border: 5px solid rgb(240, 118, 118);
+  transform: scale(1.2);}
+  100% {border-color:  red;}
+  
+} 
+
+#userAvatar:hover {
+  animation: avatarBorderAnimation 0.5s;
+  
+}
+
+#downloadDiv {
+  display: flex;
+  gap: var(--rtc-gap-xs);
+}
+
+#downloadLink img {
+  width: 15px;
+}

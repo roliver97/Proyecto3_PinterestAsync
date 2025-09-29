@@ -1,3 +1,9 @@
+import './header.css'
+import { printImages } from "../gallery/gallery.js";
+import { defaultSearch } from "../gallery/gallery.js";
+import { cardListeners } from "../gallery/gallery.js";
+import { searchPhotos } from '../unsplash.js';
+
 export const printHeader = () => {
   templateHeader();
   headerListeners();
@@ -110,6 +116,38 @@ const headerListeners = () => {
   const menu = document.querySelector(".headerMenuContainer");
   const userNavBtn = document.querySelector(".userButton");
   const activityMenu = document.querySelector(".headerActivityContainer")
+
+  const input = document.querySelector("#searchBarInput");
+  const searchButton = document.querySelector("#searchBarButton");
+  const logo = document.querySelector(".logoButton");
+  const homeLink = document.querySelector(".homeLink")
+
+  const doSearch = async () => {
+    const images = await searchPhotos(input.value)
+    printImages(images.response.results)
+    cardListeners();
+
+    input.value = "";
+  }
+
+  searchButton.addEventListener("click", async () => {
+    await doSearch();
+  })
+
+  input.addEventListener("keydown", async (event) => {
+  if (event.key === "Enter") {
+    await doSearch();
+  }
+  });
+
+  homeLink.addEventListener("click", async () => {
+    await defaultSearch();
+  })
+
+  logo.addEventListener("click", async () => {
+    await defaultSearch();
+  });
+
 
   /* Comprobación inicial medidas ventana (al recargar) */
   if (window.matchMedia("(max-width: 1000px)").matches){

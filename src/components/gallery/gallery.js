@@ -1,5 +1,6 @@
-import { templateCard } from "./cards";
-import { searchPhotos } from './unsplash.js';
+import './gallery.css'
+import { templateCard } from "../cards/cards.js";
+import { searchPhotos } from '../unsplash.js';
 
 const templateGallery = () => {
   const main = document.querySelector("main");
@@ -12,7 +13,7 @@ const templateGallery = () => {
   return gallery;
 }
 
-const printImages = (images) => {
+export const printImages = (images) => {
   const gallery = document.querySelector(".gallery")
   gallery.innerHTML= "";
   for (const image of images) {
@@ -21,56 +22,17 @@ const printImages = (images) => {
   }
 }
 
-
-
-let firstSearchTerm = null; // Para guardar el primer input que escriba el usuario. Lo usamos en headerListeners() y mostrará ese primer input si el usuario pulsa el Logo o "Inicio"
-
-const headerListeners = () => {
-  const input = document.querySelector("#searchBarInput");
-  const searchButton = document.querySelector("#searchBarButton");
-  const logo = document.querySelector(".logoButton");
-  const homeLink = document.querySelector(".homeLink")
-
-  const doSearch = async () => {
-    if (!firstSearchTerm) firstSearchTerm = input.value;
-    const images = await searchPhotos(input.value)
-    printImages(images.response.results)
-    cardListeners();
-
-    input.value = "";
-  }
-
-  const defaultSearch = async () => {
-    if (firstSearchTerm) {
-    const images = await searchPhotos(firstSearchTerm);
+export const defaultSearch = async () => {
+  try {
+    const images = await searchPhotos("cats");
     printImages(images.response.results);
     cardListeners();
-}
-    
-    input.value = "";
+  } catch (error) {
+    console.error("Error loading images:", error);
   }
-
-  searchButton.addEventListener("click", async () => {
-    await doSearch();
-  })
-
-  input.addEventListener("keydown", async (event) => {
-  if (event.key === "Enter") {
-    await doSearch();
-  }
-  });
-
-  homeLink.addEventListener("click", async () => {
-    await defaultSearch();
-  })
-
-  logo.addEventListener("click", async () => {
-    await defaultSearch();
-  });
-
 }
 
-const cardListeners = () => {
+export const cardListeners = () => {
   const cards = document.querySelectorAll(".card");
 
   cards.forEach(card => {
@@ -124,14 +86,7 @@ const cardListeners = () => {
   })
 }
 
-
-
 export const printGallery = async () => {
   templateGallery()
-  headerListeners()
-
-  const images = await searchPhotos("cats")
-  printImages(images.response.results)
-  
-  cardListeners()  
+  defaultSearch();
 }

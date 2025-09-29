@@ -1,8 +1,6 @@
+import './cards.css'
 
 export const templateCard = (image) => {
-  const main = document.querySelector("main");
-  main.classList.add("flex-container");
-
   /* CARD */
   const card = document.createElement("li");
   

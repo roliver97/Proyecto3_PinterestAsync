@@ -1,0 +1,91 @@
+/* CONFIGURACIONES GENERALES*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+label,
+button,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--rtc-text-1);
+}
+
+:root {
+  /* BRANDING COLORS */
+  --rtc-color-1: #ffffff;
+  --rtc-color-2: #000000;
+  --rtc-color-3: #ff0000;
+  --rtc-color-4: #cacaca;
+  --rtc-color-5: #646464;
+  --rtc-color-6: #ffb4b4;
+
+
+  --rtc-bgColor: var(--rtc-color-1);
+  --rtc-bgColorInverted: var(--rtc-color-2)
+  --rtc-textColor: var(--rtc-color-2);
+  --rtc-textColorInverted: var(--rtc-color-1);
+  --rtc-highlightColor: var(--rtc-color-3);
+  --rtc-highlightColor2: var(--rtc-color-6);
+
+  /* BORDER*/
+  --rtc-border-card: 7px solid var(--rtc-color-6);
+  --rtc-border-button: 1.5px solid var(--rtc-color-5);
+  --rtc-border-section: 2px solid var(--rtc-color-7);
+
+  /* BORDER RADIUS */
+  --rtc-border-radius: 100px;
+
+  /* SPACINGS */
+  --rtc-margin-xs: 10px;
+  --rtc-margin-s: 20px;
+  --rtc-margin-m: 30px;
+  --rtc-margin-l: 40px;
+  --rtc-margin-xl: 50px;
+  --rtc-margin-xxl: 100px;
+
+  --rtc-padding-xs: 10px;
+  --rtc-padding-s: 20px;
+  --rtc-padding-m: 30px;
+  --rtc-padding-l: 40px;
+  --rtc-padding-xl: 50px;
+  --rtc-padding-xxl: 100px;
+
+  --rtc-gap-xs: 10px;
+  --rtc-gap-s: 20px;
+  --rtc-gap-m: 30px;
+  --rtc-gap-l: 40px;
+  --rtc-gap-xl: 50px;
+  --rtc-gap-xxl: 75px
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+main {
+  padding: var(--rtc-padding-xl);
+}
