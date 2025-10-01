@@ -39,10 +39,10 @@ export const templateCard = (image) => {
   photosCounterIcon.className = "photosCounterIcon";
   likesCounterSpan.className = "likesCounterSpan"
   photosCounterSpan.className = "photosCounterSpan"
-  photosCounterIcon.src = "/icons/photos.png";
+  photosCounterIcon.src = "icons/photos.png";
   photosCounterLink.href = image.user.links.html;
   photosCounterSpan.textContent = image.user.total_photos;
-  likesCounterIcon.src = "/icons/no_like.png";
+  likesCounterIcon.src = "icons/no_like.png";
   likesCounterSpan.textContent = image.user.total_likes;
   visitLink.textContent = "Visitar";
   visitLink.href = image.user.portfolio_url;
@@ -84,7 +84,7 @@ export const templateCard = (image) => {
 
   photoDate.textContent = image.user.updated_at.slice(0, 10);
   downloadLink.href = image.links.download;
-  downloadIcon.src = "/icons/download.png";
+  downloadIcon.src = "icons/download.png";
 
 
   card.appendChild(infoDiv);

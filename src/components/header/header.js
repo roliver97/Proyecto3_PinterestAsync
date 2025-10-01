@@ -36,7 +36,7 @@ const templateHeader = () => {
   /* Nav Menu */
   const pageLogo = document.createElement("button");
   const pageLogoIcon = document.createElement("img");
-  pageLogoIcon.src = "/icons/pinterest.png";
+  pageLogoIcon.src = "icons/pinterest.png";
   pageLogo.className = "logoButton"
 
   const homeLink = document.createElement("a");
@@ -62,7 +62,7 @@ const templateHeader = () => {
   const searchBarIcon = document.createElement("img");
   const searchBarInput = document.createElement("input");
 
-  searchBarIcon.src = "/icons/search.png";
+  searchBarIcon.src = "icons//search.png";
   searchBarInput.placeholder = "Buscar";
   searchBarButton.id = "searchBarButton";
   searchBarInput.id = "searchBarInput";
@@ -79,10 +79,10 @@ const templateHeader = () => {
   const conversationsIcon = document.createElement("img");
 
   notificationsLink.href = "#";
-  notificationsIcon.src = "/icons/notifications.png";
+  notificationsIcon.src = "icons/notifications.png";
 
   conversationsLink.href = "#";
-  conversationsIcon.src = "/icons/conversations.png";
+  conversationsIcon.src = "icons/conversations.png";
 
   activityContainer.appendChild(notificationsLink);
   notificationsLink.appendChild(notificationsIcon);
@@ -95,7 +95,7 @@ const templateHeader = () => {
   const userIcon = document.createElement("img");
 
   userButton.className = "userButton"
-  userIcon.src = "/icons/user.png";
+  userIcon.src = "icons/user.png";
 
   userContainer.appendChild(userButton);
   userButton.appendChild(userIcon);
